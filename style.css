@@ -1,0 +1,883 @@
+/* Imports */
+@import url('https://fonts.cdnfonts.com/css/bebas-neue');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    /* background-color: rgb(5, 0, 5); */
+    background-color: black;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: sans-serif;
+
+}
+
+:root {
+    --width-default: min(1200px, 90vw);
+    --diameter: 1432px;
+}
+
+html, body {
+    max-width: 100%;
+    scroll-behavior: smooth;
+}
+
+
+
+/* Header and Navbar Styles */
+header {
+    width: 100%;
+    height: 12vh;
+    padding: 0 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 1s ease, box-shadow 1s ease;
+}
+
+header.transparent {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.514);
+    box-shadow: rgba(48, 48, 48, 0.35) 0px 2px 2px;
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    gap: 30px; /* Increased gap for better spacing */
+    position: relative;
+    justify-content: center; /* Center align the navigation links */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #eee;
+    font-size: 15px;
+    font-weight: 800;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+nav ul li a span {
+    position: relative;
+}
+
+nav ul li a span::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: goldenrod;
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a span:hover::after {
+    width: 100%;
+}
+
+/* Logo Styles */
+.logo-image {
+    position: absolute; /* Fixed positioning */
+    left: 120px; /* Adjusted distance from the left for better alignment */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 180px; /* Increased size */
+    height: auto; /* Maintain aspect ratio */
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+/* Hamburger Menu */
+#hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+}
+
+#menu-icon path {
+    fill: gold;
+    transition: fill 0.3s ease;
+}
+
+header.scrolled #menu-icon path {
+    fill: gold;
+}
+
+/* Blog Cursor */
+a[href="#Blog"] {
+    cursor: pointer;
+}
+
+body.blog-open a[href="#Blog"] {
+    cursor: not-allowed;
+}
+
+/* Responsive Styles */
+@media (max-width: 930px) {
+    header {
+        padding: 0 20px;
+    }
+
+    #hamburger-menu {
+        display: block;
+    }
+
+    .logo-image {
+        width: 150px; /* Increased size */
+        left: 60px; /* Adjusted distance for smaller screens */
+    }
+}
+
+@media (max-width: 668px) {
+    header {
+        padding: 0 20px;
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 13vh;
+        right: 0;
+        width: 79%;
+        padding: 20px 0;
+    }
+
+    #nav-links.active {
+        display: flex;
+    }
+
+    #hamburger-menu {
+        display: block;
+    }
+
+    .logo-image {
+        width: 150px; /* Increased size */
+        left: 40px; /* Fixed alignment for very small screens */
+    }
+}
+
+/* iPad Screens - Adjust Logo & Nav */
+@media (min-width: 768px) and (max-width: 1024px) {
+    header {
+        padding: 0 50px;
+        justify-content: space-between; /* Ensures spacing is more balanced */
+    }
+
+    #hamburger-menu {
+        display: none;
+    }
+
+    .logo-image {
+        left: 50px; /* Adjust logo distance for better spacing */
+    }
+
+    nav ul {
+        gap: 30px; /* Keep a good gap */
+        position: relative;
+        justify-content: flex-start; /* Align nav to the left with a gap from the logo */
+    }
+}
+
+
+
+/* HOME */
+#Home {
+    color: white;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-image: url('https://cdn.pixabay.com/photo/2022/04/06/13/25/dessert-7115585_960_720.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/* Cakes */
+/* Cakes Section Styling */
+/* Cakes Section Styling */
+/* Cakes Section Styling */
+/* Cakes Section Styling */
+/* Cakes Section Styling */
+#Cakes {
+    overflow-x: hidden;
+    min-height: 100vh; /* Full viewport height */
+    padding: 0 20px; /* Add some padding on smaller screens */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center align items horizontally */
+    text-align: center; /* Align text to the center */
+    box-sizing: border-box; /* Include padding in total width/height */
+}
+
+
+/* Title Styling */
+#Cakes .title {
+    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Responsive font size */
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #eeeeeede; /* Golden color for title */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Subtle text shadow */
+    text-align: center;
+    max-width: 90%; /* Restrict width for better control */
+    margin: 0 auto; /* Center align */
+    line-height: 1.2; /* Control line spacing */
+    white-space: normal; /* Allow wrapping */
+
+
+    
+        font-family: "Lobster", serif;
+        font-weight: 400;
+        font-style: normal;         
+}
+
+
+/* Horizontal Line */
+#Cakes hr {
+    width: 15%; /* Shorter horizontal line */
+    border: 1px solid goldenrod;
+    margin: 30px auto;
+}
+
+/* Theme Section Styling */
+#Cakes .theme {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: center; /* Center align on smaller screens */
+    align-items: flex-start; /* Align items to the top of the section */
+    max-width: 1100px;
+    width: 100%;
+    margin-top: 70px;
+    gap: 20px;
+    box-sizing: border-box; /* Ensure padding doesn't exceed width */
+}
+
+/* Theme Description Styling */
+#Cakes .theme-description {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #eeeeeec2; /* Lighter text color */
+    text-align: left; /* Align text to the left */
+    width: 60%; /* Set specific width for description */
+    margin-top: 20px;
+}
+
+/* Theme Description Heading */
+#Cakes .theme-description h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: goldenrod;
+
+    /* font-family: "Lobster", serif;
+    font-weight: 400;
+    font-style: normal;    */
+
+    font-family: "Smooch Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+/* Image Styling */
+#Cakes .theme img {
+    flex: 1;
+    max-width: 100%; /* Ensure the image doesn't exceed the container's width */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body{
+        overflow-x: hidden;
+        position: sticky;
+    }
+    #Cakes {
+        padding: 50px 20px; /* Reduce vertical padding on mobile */
+    }
+
+    #Cakes .theme {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #Cakes .theme-description {
+        text-align: center; /* Center align the description on smaller screens */
+        width: 80%; /* Make the description take full width on small screens */
+    }
+
+    #Cakes .title {
+        font-size: clamp(1.3rem, 4vw, 2rem); /* Smaller scaling for mobile screens */
+        max-width: 100%; /* Reduce width on smaller screens */
+        white-space: nowrap; /* Prevent wrapping to the next line */
+        overflow: hidden; /* Hide overflow text */
+        text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+    }
+
+    #Cakes hr {
+        margin-bottom: 0; /* Remove any bottom margin */
+    }
+
+    #Cakes .theme {
+        margin-top: 0; /* Ensure no gap on mobile */
+    }
+
+    #Cakes .theme-description h3 {
+        font-size: 20px;
+    }
+}
+
+
+/*  */
+
+
+
+
+
+
+
+
+
+/* ************************************************************************************************************************** */
+/* About Section */
+#About{
+    padding: 0 20px; /* Add some padding on smaller screens */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center align items horizontally */
+    text-align: center; /* Align text to the center */
+    box-sizing: border-box; /* Include padding in total width/height */
+
+    width: 100%;
+
+
+}
+
+.wrapper {
+  max-width: 1290px;
+  width: 100%;
+  /* overflow-x: hidden; */
+  position: relative;
+}
+
+.wrapper i {
+  top: 50%;
+  /* height: 50px;
+  width: 50px; */
+  cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
+  text-align: center;
+  /* line-height: 50px; */
+
+  font-weight: 600;
+
+  color: goldenrod;
+  /* background: #fff;
+  border-radius: 50%; */
+  /* box-shadow: 0 3px 6px rgba(0,0,0,0.23); */
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+
+/*  */
+
+
+
+/*  */
+
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+.wrapper i:first-child{
+  left: -70px;
+}
+.wrapper i:last-child{
+  right: -50px;
+}
+.wrapper .carousel{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+.carousel :where(.card, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel .card {
+  scroll-snap-align: start;
+  height: 400px;
+  list-style: none;
+  /* background: #fff; */
+  cursor: pointer;
+  padding-bottom: 15px;
+  flex-direction: column;
+}
+
+
+
+.carousel .card .img {
+  height: 200px;
+  width: 290px;
+}
+
+.card .img img {
+  width: 400px;
+  height: 350px;
+  object-fit: cover;
+}
+
+
+
+.carousel .card h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+  color: #6A6D78;
+
+  font-family: "Smooch Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+.carousel .card span {
+  color: goldenrod;
+  font-size: 1.31rem;
+}
+
+
+.tag{
+    padding-top: 100px;
+    text-align: start;
+    padding-right: 233px;
+}
+
+
+@media screen and (max-width: 900px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        /* max-width: 1300px; */
+        width: 100%;
+        /* overflow-x: hidden; */
+        position: relative;
+      }
+
+      .wrapper i:first-child{
+        left: -4px;
+      }
+
+      .wrapper i:last-child{
+        right: -2px;
+      }
+
+  .wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
+
+}
+
+
+
+
+
+/* VIDEO */
+/* Main Video Section */
+.video-section {
+    position: relative;
+    width: 100%; /* Make the container 80% of the screen width */
+    height: auto; /* Allow height to adjust naturally */
+    margin-bottom: 50px; /* Center horizontally and add vertical margins */
+    overflow: hidden; /* Ensure no overflow */
+    border-radius: 0% 50% 40% 0%; /* Round only the bottom-left and bottom-right corners */
+    box-shadow: 0 0 50px 20px rgba(0, 0, 0, 1); /* Very dark black shadow */
+
+    top: 10px;
+}
+
+/* Dark Overlay on Video */
+.video-section::before {
+    content: ''; /* Empty content for the overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.849); /* Darken the background with a stronger overlay */
+    z-index: 0; /* Place it behind the content */
+}
+
+/* Background Video */
+.background-video {
+    position: relative;
+    width: 100%; /* Make the video fill the width of the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the entire video is displayed */
+    z-index: -1; /* Make sure the video stays behind the content */
+}
+
+/* Content Overlay */
+.content {
+    position: absolute; /* Overlay content on video */
+    top: 50%; /* Center content vertically */
+    left: 50%; /* Center content horizontally */
+    transform: translate(-50%, -50%); /* Correct centering */
+    z-index: 1; /* Ensure content is above the video */
+    color: white;
+    text-align: center;
+    width: 50%; /* Set initial width to 80% for larger screens */
+}
+
+/* Title Styling */
+.content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: gold;
+
+    font-family: "Lobster", serif;
+    font-weight: 400;
+    font-style: normal;  
+}
+
+/* Paragraph Styling */
+.content p {
+    font-size: 2rem;
+    color: #eeeeeec2;
+
+    font-family: "Smooch Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+/* Fallback background image if video is unavailable */
+.video-section {
+    background: url('') no-repeat center center/cover;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1200px) {
+    .video-section {
+        width: 100%; /* Increase width to 100% for medium screens */
+    }
+
+    .content {
+        width: 90%; /* Increase width of content to reduce word breaks */
+    }
+
+    .content h1 {
+        font-size: 2.5rem; /* Reduce title font size for medium screens */
+    }
+
+    .content p {
+        font-size: 1.2rem; /* Reduce paragraph font size for medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .video-section {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .content {
+        width: 95%; /* Increase width of content for smaller screens */
+    }
+
+    .content h1 {
+        font-size: 2rem; /* Reduce title font size for smaller screens */
+    }
+
+    .content p {
+        font-size: 1rem; /* Reduce paragraph font size for smaller screens */
+    }
+
+    .video-section::before {
+        background-color: rgba(0, 0, 0, 0.575); /* Darken the background with a stronger overlay */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .video-section {
+        width: 100%; /* Full width for extra small screens */
+    }
+
+    .content {
+        width: 95%; /* Make the content even wider on very small screens */
+    }
+
+    .content h1 {
+        font-size: 1.5rem; /* Further reduce title font size for very small screens */
+    }
+
+    .content p {
+        font-size: 0.9rem; /* Further reduce paragraph font size for very small screens */
+    }
+}
+
+
+
+
+
+
+/* Testimonials */
+#Testimonials {
+    height: 60vh; /* Set the height */
+    width: 100%; /* Full width */
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Arrange content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    color: #eeeeeede; /* Text color */
+    text-align: center; /* Center text */
+    box-sizing: border-box; /* Ensure padding is included in height/width */
+}
+
+/* Example styling for child elements inside #Testimonials */
+#Testimonials h1 {
+    font-size: 2.5rem; /* Title size */
+    margin-bottom: 4rem; /* Space below title */
+
+    font-family: "Lobster", serif;
+    font-weight: 400;
+    font-style: normal;  
+}
+
+#Testimonials .box {
+  display: flex;
+  width: 70%;
+}
+
+
+#Testimonials .box .box-1 {
+    border: 0.1px solid #424040; /* Apply a thin border */
+    border-left: none; /* Remove the left-side border */
+    padding: 10px; /* Optional: Add some padding inside the box */
+}
+
+#Testimonials .box .box-2 {
+    border: 1px solid #424040; /* Apply a thin border */
+    padding: 10px; /* Optional: Add some padding inside the box */
+}
+
+#Testimonials .box .box-3 {
+    border: 1px solid #424040; /* Apply a thin border */
+    border-right: none; /* Remove the left-side border */
+    padding: 20px; /* Optional: Add some padding inside the box */
+}
+
+#Testimonials .box p{
+    padding: 25px;
+    font-size: 30px;
+    text-align: start;
+
+
+  font-family: "Smooch Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+span nav {
+    display: flex; /* Use flexbox for a row layout */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: flex-start; /* Align items to the start without space between */
+    gap: 10px; /* Remove any gap between items */
+    padding-left: 60px;
+}
+
+
+span nav img{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+
+span nav h3{
+    font-size: 20px;
+}
+
+
+
+/* STARS */
+span .starlings{
+    padding-top: 20px;
+    display: flex; /* Use flexbox for a row layout */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: flex-start; /* Align items to the start without space between */
+    gap: 10px; /* Remove any gap between items */
+    padding-left: 30px;
+}
+
+span .starlings img{
+    width: 20px;
+}
+
+
+/*  */
+/* For tablets (768px and below) */
+@media screen and (max-width: 768px) {
+    #Testimonials {
+        padding: 40px 20px; /* Add more padding to separate it from other sections */
+        margin-top: 266px; /* Add margin to avoid overlap */
+    }
+
+    #Testimonials h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 30px; /* Add spacing below the heading */
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        gap: 0px; /* Spacing between boxes */
+    }
+
+    .box > div {
+        text-align: center;
+    }
+
+    .starlings img {
+        width: 20px;
+        height: 20px;
+    }
+
+    nav img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+
+    nav h3 {
+        font-size: 1rem;
+    }
+
+
+
+    /*  */
+    #Testimonials .box .box-1 {
+        border-left: none; /* Remove the left-side border */
+    }
+    
+    #Testimonials .box .box-2 {
+        border-right: none; /* Remove the left-side border */ 
+    }
+    
+    #Testimonials .box .box-3 {
+        border: 1px solid #424040; /* Apply a thin border */
+        border-left: none; /* Remove the left-side border */
+    }
+}
+
+/* For mobile phones (480px and below) */
+@media screen and (max-width: 480px) {
+    #Testimonials {
+        padding: 50px 15px; /* Add enough padding to avoid overlap */
+        margin-top: 622px; /* Increase margin to ensure separation */
+    }
+
+    #Testimonials h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .box {
+        gap: 0px;
+    }
+
+    .starlings img {
+        width: 18px;
+        height: 18px;
+    }
+
+    nav img {
+        width: 50px;
+        height: 50px;
+    }
+
+    nav h3 {
+        font-size: 0.9rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+}
+
+
+
+/* BLOGS */
+#Blogs{
+    height: 70vh; /* Set the height */
+    width: 100%; /* Full width */
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Arrange content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    color: #eeeeeede; /* Text color */
+    text-align: center; /* Center text */
+    box-sizing: border-box; /* Ensure padding is included in height/width */
+}
